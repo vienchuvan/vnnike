@@ -4,6 +4,10 @@ import ProductDetail from "@/components/Product/ProductDetail.vue";
 import Cart from "@/components/Cart/AddCard.vue";
 import ListCart from "@/components/Cart/ListCart.vue";
 import Test from "@/components/Product/test.vue";
+import LoginVue from "@/components/Dboard/LoginVue.vue";
+import DboardQuanTri from '@/components/Dboard/DboardQuanTri.vue';
+import BlogGioiThieu from '@/components/BlogGioiThieu.vue';
+
 
 const routes = [
   {
@@ -14,7 +18,7 @@ const routes = [
   {
     path: '/product/:nameProduct',
     name: 'ProductDetail',
-    component:ProductDetail,
+    component: ProductDetail,
     props: true
   },
   {
@@ -29,10 +33,23 @@ const routes = [
   },
   {
     path: '/test',
-    name: 'cart',
+    name: 'test',
     component: Test
   },
-]
+  {
+    path: '/dangnhap',
+    name: 'Login',
+    component: LoginVue
+  },
+  {
+    path: '/dashboard/quantri', name: 'quantri', 
+  
+    component: DboardQuanTri
+  },
+  {
+    path: '/bai-viet/:shortUrl', name: 'baiviet', component: BlogGioiThieu
+   },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

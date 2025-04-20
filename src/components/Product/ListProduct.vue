@@ -1,11 +1,9 @@
 <template>
-  <section class="py-2">
+  <section class="py-2 mt-5">
+    <h2 style="color: rgb(23, 162, 184);">Danh sách sản phẩm bán chạy</h2>
+    <div class="w-100 mt-3" style="border-bottom: 1px dotted"></div>
     <div class="container  mt-5">
-      <h2
-        class="section-title position-relative text-uppercase mx-xl-5 mb-4 text-green"
-      >
-        <span class=" pr-3" style="color:#17a2b8">Danh sách bán chạy</span>
-      </h2>
+      
       <div class="row g-4 justify-content-between " style="JUSTIFY-CONTENT: space-between;" v-if="products && products.length">
         <!-- Product card -->
         <div
@@ -114,7 +112,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 /* Mặc định 5 sản phẩm / hàng */
 .custom-col {
   width: 22%;

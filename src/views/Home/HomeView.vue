@@ -142,7 +142,9 @@
 
     <ListProducts> </ListProducts>
     <tuVan></tuVan>
-    <FooterShop></FooterShop>
+    <ViSaoChonHome></ViSaoChonHome>
+    <DuAnTrienKhai></DuAnTrienKhai>
+    <FooterVNnike></FooterVNnike>
   </div>
 </template>
    
@@ -157,6 +159,10 @@ import ListProductCate from "@/components/Product/ListProductCate.vue";
 import { imageUrls } from "@/assets/js/imgUrl";
 import VeChungToi from "./veChungToi.vue";
 import tuVan from "./TuVanFree.vue";
+import ViSaoChonHome from "./ViSaoChonHome.vue";
+import DuAnTrienKhai from "./DuAnTrienKhai.vue";
+import FooterVNnike from "../Footer/FooterVNnike.vue";
+
 export default {
   components: {
     HeaderShop,
@@ -164,9 +170,10 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     CategoryProduct,
     ListProducts,
-    FooterShop,
+    // eslint-disable-next-line vue/no-unused-components
+    FooterShop,FooterVNnike,
     VeChungToi,
-    tuVan,
+    tuVan,ViSaoChonHome,DuAnTrienKhai,
     // eslint-disable-next-line vue/no-unused-components
     ListProductCate
 },
