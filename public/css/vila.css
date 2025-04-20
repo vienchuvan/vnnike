@@ -1,0 +1,345 @@
+.animated-input::placeholder {
+  color: #000;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-input {
+  animation: fade-in 0.5s forwards;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid;
+}
+.cover-photo {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  height: 450px;
+  overflow: hidden;
+}
+
+.cover-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cover-photo .profile-name {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-div {
+  background: #fff;
+  border-radius: 10px;
+  height: auto;
+}
+
+.activi-tus {
+  color: #818181;
+  font-size: 13px;
+}
+.btn-activity {
+  border: none;
+  background: white;
+  width: 30%;
+}
+.form-div-left {
+  animation-name: moveInleft;
+  animation-duration: 3s;
+}
+
+.form-div-right {
+  animation-name: moveInRight;
+  animation-duration: 3s;
+}
+.form-div-top {
+  animation-name: moveInTop;
+  animation-duration: 3s;
+}
+
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ----------------------------login--------------------------- */
+
+.cut-text {
+  display: block;
+  display: -webkit-box;
+  height: 16px*1.3*3;
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-line-clamp: 4;  /* số dòng hiển thị */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top:10px;
+}
+
+ .img-bg {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+ .img-bg img {
+  width: 50%;
+  height: 50%;
+  border-radius: 50px;
+}
+ .noi-dung {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+ .noi-dung .form {
+  width: 100%;
+}
+
+ .noi-dung .form h2 {
+  color: #2d804b;
+  font-weight: 500;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #ff4545;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+ .noi-dung .form .input-form {
+  margin-bottom: 20px;
+}
+ .noi-dung .form .input-form span {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #2d804b;
+  left: 0;
+  display: block;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 1px;
+}
+ .noi-dung .form .input-form input {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  border: 1px solid #607d8b;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #d2d2d2;
+  background: transparent;
+  border-radius: 30px;
+}
+ .noi-dung .form .input-form input[type="submit"] {
+  background: #ff4545;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+ .noi-dung .form .input-form input[type="submit"]:hover {
+  background: #f53636;
+}
+ .noi-dung .form .nho-dang-nhap {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 14px;
+}
+ .noi-dung .form .input-form p {
+  color: #ffffff;
+}
+ .noi-dung .form .input-form p a {
+  color: #ff4545;
+}
+
+ .noi-dung .form h3 {
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  margin: 30px 0 10px;
+  font-weight: 500;
+}
+ .noi-dung .form .icon-dang-nhap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ .noi-dung .form .icon-dang-nhap li {
+  list-style: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+  border: 1px solid;
+  align-items: center;
+}
+ .noi-dung .form .icon-dang-nhap li:nth-child(1) {
+  color: #3b5999;
+}
+ .noi-dung .form .icon-dang-nhap li:nth-child(2) {
+  color: #ff1e00;
+}
+ .noi-dung .form .icon-dang-nhap li:nth-child(3) {
+  color: #55acee;
+}
+ .noi-dung .form .icon-dang-nhap li i {
+  font-size: 24px;
+}
+.float-left{
+  float: left;
+}
+
+.img-icon{
+width: 25px;
+}
+.border-radius-10{
+  border-radius: 10px;
+}
+.btn-primary-face {
+  color: white;
+  background-color: #0059ff;
+
+  border-color: #0059ff;
+}
+.btn-primary-zalo {
+  color: white;
+  background-color: #00ccff;
+  
+  border-color: #00ccff;
+}
+.btn-primary-live {
+  color: white;
+  background-color: #16c06b;
+  
+  border-color: #16c06b;
+}
+@media (max-width: 768px) {
+   .img-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+   .noi-dung {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+   .noi-dung .form {
+    width: 100%;
+    padding: 40px;
+    background: rgba(255 255 255 / 0.9);
+    margin: 50px;
+  }
+   .noi-dung .form h3 {
+    color: #607d8b;
+    text-align: center;
+    margin: 30px 0 10px;
+    font-weight: 500;
+  }
+}
