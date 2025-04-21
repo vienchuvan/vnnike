@@ -95,7 +95,7 @@ export default {
     },
     getProducts() {
       axios
-        .get("http://localhost:3001/api/sanpham/services/getSanPham")
+        .get("http://103.200.23.139:3001/api/sanpham/services/getSanPham")
         .then((res) => {
           this.products = res.data.response.slice(0,8);
           console.log("this.products ", this.products);

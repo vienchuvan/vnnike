@@ -50,9 +50,9 @@ export default {
     },
     getProducts() {
       axios
-        .get("http://localhost:3001/api/duan/services/getDuAn")
+        .get("http://103.200.23.139:3001/api/duan/services/getDuAn")
         .then((res) => {
-          this.products = res.data.response.slice(0, 8);
+          this.products = res.data.response;
           console.log("this.products ", this.products);
         })
         .catch((error) => {
