@@ -9,6 +9,11 @@ export const imageUrls = {
  banner5 : "img/banner/banner5.jpg",
  banner6 : "img/banner/banner6.jpg",
 
- homeVeChungToi : "img/home/imgHomeVCT.jpg",
- homeVeChungToi2 : "img/home/bgHome.jpg",
+ homeVeChungToi : "img/Home/imgHomeVCT.jpg",
+ homeVeChungToi2 : "img/Home/bgHome.jpg",
+
+ homeimgSCT : "img/Home/SCT.png",
+ homeimgSL : "img/Home/SL.png",
+ homeimgSNGT : "img/Home/SNGT.png",
+ homeimgSNT : "img/Home/SNT.png",
 }

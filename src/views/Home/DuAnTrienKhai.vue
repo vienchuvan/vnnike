@@ -45,7 +45,7 @@ export default {
     },
     getProducts() {
       axios
-      .get("http://103.200.23.139:3001/api/duan/services/getDuAn")
+      .get("https://sonvnnike.com.vn//api/duan/services/getDuAn")
         .then((res) => {
           this.products = res.data.response.slice(0, 8);
           console.log("this.products ", this.products);

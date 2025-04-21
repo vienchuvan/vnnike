@@ -64,7 +64,7 @@
       <a href="#"> 
         <img
           style="width: 300px"
-          src="http://sonmysun.vn/wp-content/uploads/2022/07/SNT.png"
+          :src="imageUrls.homeimgSNT"
         /></a>
       </div>
       <div
@@ -74,7 +74,7 @@
       <a href="#"> 
         <img
           style="width: 300px"
-          src="http://sonmysun.vn/wp-content/uploads/2022/07/SNGT.png"
+           :src="imageUrls.homeimgSNGT"
         /></a>
       </div>
       <div
@@ -84,7 +84,7 @@
       <a href="#"> 
         <img
           style="width: 300px"
-          src="http://sonmysun.vn/wp-content/uploads/2022/07/SCT.png"
+         :src="imageUrls.homeimgSCT"
         /></a>
       </div>
       <div
@@ -94,7 +94,7 @@
       <a href="#"> 
         <img
           style="width: 300px"
-          src="http://sonmysun.vn/wp-content/uploads/2022/07/SL.png"
+           :src="imageUrls.homeimgSL"
         /></a>
       </div>
     </div>

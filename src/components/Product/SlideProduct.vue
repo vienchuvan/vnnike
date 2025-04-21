@@ -48,6 +48,7 @@
   </div>
 </template>
 <script>
+import { header } from "@/assets/js/snapService";
 import axios from "axios";
 export default {
     data() {
@@ -66,7 +67,7 @@ export default {
 
     getProducts() {
       axios
-        .get("http://103.200.23.139:3001/api/sanpham/services/getSanPham")
+        .get("http://103.200.23.139:3001/api/sanpham/services/getSanPham", {headers: header})
         .then((res) => {
           this.products = res.data.response;
         })
