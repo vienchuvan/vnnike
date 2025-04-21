@@ -30,30 +30,31 @@
               class="form-control"
               type="text"
               v-model="titleBaiViet"
-              placeholder="Nhập tiêu đề..."
+              @focus="moveLabelUp"
+              @blur="moveLabelDown"
             />
             <label style="font-size: 16px; font-weight: 600">Tiêu đề</label>
           </span>
 
+    
           <span class="has-float-label mt-4">
             <input
               class="form-control"
               style="height: 100px"
               type="text"
               v-model="shortContent"
-              placeholder="Nhập nội dung tóm tắt.."
             />
             <label style="font-size: 16px; font-weight: 600">Nội dung tóm tắt</label>
           </span>
+          
           <span class="has-float-label mt-4">
-            <label style="font-size: 16px; font-weight: 600">Nội dung bài viết</label>
+           
             <textarea id="editor1"></textarea>
           </span>
           <span class="has-float-label mt-4">
             <input
               class="form-control"
               type="text"
-              placeholder="Nhập url ảnh..."
               v-model="urlImage"
             />
             <label style="font-size: 16px; font-weight: 600">url Ảnh hiển thị</label>
@@ -64,9 +65,8 @@
               class="form-control"
               type="text"
               v-model="urlBaiViet"
-              placeholder="Nhập link bài viết (VD: ss-la-gi-tai-sao-su-dung-ssl)"
             />
-            <label style="font-size: 16px; font-weight: 600">Link bài viết</label>
+            <label style="font-size: 16px; font-weight: 600">Link bài viết  <i style="font-weight: 200; font-size: 14px;">(* VD: son-trong-tham)</i></label> 
           </span>
         </div>
         <div class="d-flex">
@@ -78,7 +78,7 @@
           >
             Sửa bài viết
           </button>
-          <button class="w-25" style="height: 50px; color: white" v-if="themBaiViet">
+          <button class="w-25"  @click="themBaiVietMoi()" style="height: 50px; color: white" v-if="themBaiViet">
             Thêm bài viết
           </button>
         </div>
@@ -181,6 +181,30 @@ export default {
         console.log(err);
       }
     },
+
+    async themBaiVietMoi() {
+      try {
+        const resBaiViet = await postUpdateBaiViet(
+          6,
+          "0979951954",
+          this.titleBaiViet,
+          this.shortContent,
+          this.contentBaiViet,
+          this.urlImage,
+          this.urlBaiViet,
+          this.idBaiViet
+        );
+        console.log(" resBaiViet ", resBaiViet);
+        if (resBaiViet.status === 200) {
+          alert(resBaiViet.data.message);
+          window.location.reload();
+        } else {
+          alert("Có lỗi xảy ra, vui lòng thử lại sau !");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
 </script>
@@ -191,4 +215,38 @@ export default {
   width: 100% !important;
   max-width: 100% !important;
 }
+.has-float-label {
+  position: relative;
+}
+
+.has-float-label input {
+  width: 100%;
+  padding: 10px 10px 10px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.has-float-label label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
+  color: #aaa;
+  pointer-events: none;
+}
+
+.has-float-label input:focus + label,
+.has-float-label input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.has-float-label input::placeholder {
+  color: #ccc;
+  opacity: 1; /* Đảm bảo placeholder luôn hiển thị */
+}
+
 </style>

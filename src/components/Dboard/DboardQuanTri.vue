@@ -38,8 +38,8 @@
     </ul>
   </section>
 
-  <!-- CONTENT -->
-  <section id="content">
+  <!-- CONTENT --> 
+  <section id="content" class="bg-dboard" >
     <div v-if="selectedMenu === 'dashboard'">
       <h2>Dashboard Content</h2>
     </div>
@@ -88,3 +88,22 @@ export default {
   },
 };
 </script>
+<style>
+.bg-dboard{
+  position: relative;
+  height: 100vh;
+}
+.bg-dboard::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://fancyhouse-design.com/wp-content/uploads/2024/04/Light-and-shadow-interplay-create-dramatic-effects-accentuating-the-architectural-details-of-modern-homes.jpg) no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(10px); /* Làm mờ background */
+  z-index: -1;
+
+}
+</style>

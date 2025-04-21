@@ -153,9 +153,7 @@
 import HeaderShop from "../Menu/headerShop.vue";
 import MenuShop from "../Menu/menuShop.vue";
 import FooterShop from "../Footer/Footer.vue";
-import CategoryProduct from "@/components/Product/CategoryProduct.vue";
 import ListProducts from "@/components/Product/ListProduct.vue";
-import ListProductCate from "@/components/Product/ListProductCate.vue";
 import { imageUrls } from "@/assets/js/imgUrl";
 import VeChungToi from "./veChungToi.vue";
 import tuVan from "./TuVanFree.vue";
@@ -168,14 +166,12 @@ export default {
     HeaderShop,
     MenuShop,
     // eslint-disable-next-line vue/no-unused-components
-    CategoryProduct,
     ListProducts,
     // eslint-disable-next-line vue/no-unused-components
     FooterShop,FooterVNnike,
     VeChungToi,
     tuVan,ViSaoChonHome,DuAnTrienKhai,
     // eslint-disable-next-line vue/no-unused-components
-    ListProductCate
 },
 data(){
   return{

@@ -3,10 +3,11 @@ import HomeView from '../views/Home/HomeView.vue'
 import ProductDetail from "@/components/Product/ProductDetail.vue";
 import Cart from "@/components/Cart/AddCard.vue";
 import ListCart from "@/components/Cart/ListCart.vue";
-import Test from "@/components/Product/test.vue";
 import LoginVue from "@/components/Dboard/LoginVue.vue";
 import DboardQuanTri from '@/components/Dboard/DboardQuanTri.vue';
-import BlogGioiThieu from '@/components/BlogGioiThieu.vue';
+import BlogGioiThieu from '@/components/GioiThieu/BlogGioiThieu.vue';
+import DuAnTrienKhaiVue from '@/components/GioiThieu/DuAnTrienKhai.vue';
+import ListProductVue from '@/components/GioiThieu/ListProduct.vue';
 
 
 const routes = [
@@ -32,9 +33,14 @@ const routes = [
     component: ListCart
   },
   {
-    path: '/test',
-    name: 'test',
-    component: Test
+    path: '/du-an-hoan-thien',
+    name: 'DuAnTrienKhaiVue',
+    component: DuAnTrienKhaiVue
+  },
+  {
+    path: '/san-pham',
+    name: 'sanpham',
+    component: ListProductVue
   },
   {
     path: '/dangnhap',

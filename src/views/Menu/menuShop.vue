@@ -54,10 +54,7 @@
           class="navbar m-auto navbar-expand-lg  navbar-dark py-3 py-lg-0 px-0"
         >
           <a href="" class="text-decoration-none d-block d-lg-none">
-            <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-            <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1"
-              >Shop</span
-            >
+            <img style="width: 100px; " :src="imageUrls.logoCty" />
           </a>
           <button
             type="button"
@@ -72,15 +69,15 @@
             id="navbarCollapse"
           >
             <div class="navbar-nav m-auto py-0">
-              <a href="index.html" class="nav-item nav-link active"
+              <a href="/" class="nav-item nav-link active"
                 >Trang chủ</a
               >
             
-              <a href="detail.html" class="nav-item nav-link"
-                >Giới Thiệu</a
+              <a href="/bai-viet/gioi-thieu" class="nav-item nav-link"
+                >Giới thiệu</a
               >
-              <a href="contact.html" class="nav-item nav-link">Dự án</a>
-              <a href="contact.html" class="nav-item nav-link">Bảng màu</a>
+              <a href="/du-an-hoan-thien" class="nav-item nav-link">Dự án</a>
+              <a href="/bai-viet/bang-mau" class="nav-item nav-link">Bảng màu</a>
               <a href="contact.html" class="nav-item nav-link">Đại lý</a>
               <a href="contact.html" class="nav-item nav-link">Tin tức</a>
               <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
@@ -107,6 +104,7 @@
 import LoginShopVue from "@/components/Account/LoginShop.vue";
 import axiosAPI from "@/components/api/axiosAPI";
 import { getListCart, postLogoutAc } from "@/components/api/apiUrl";
+import { imageUrls } from "@/assets/js/imgUrl";
 export default {
   components: {
     LoginShopVue,
@@ -117,6 +115,7 @@ export default {
       isDialogVisible: false,
       user: null,
       productCount: 0,
+      imageUrls:imageUrls
     };
   },
   created() {

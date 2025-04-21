@@ -1,88 +1,33 @@
 <template>
-  <header class="header-dv-crop" :class="{ active: isScrolled }" data-header>
-    <div class="container-dv-crop">
-      <div
-        class="overlay"
-        :class="{ active: isNavOpen }"
-        @click="toggleNav"
-        data-overlay
-      ></div>
-
-      <a href="#">
-        <img style="width: 70px; height: 70px" :src="imageUrls.logoCty" />
-      </a>
-
-      <nav class="navbar-dv-crop" :class="{ active: isNavOpen }" data-navbar>
-        <div class="navbar-top">
-          <!-- <a href="#" class="logo">Ted Martins</a> -->
-          <button
-            class="nav-close-btn"
-            aria-label="Close Menu"
-            @click="toggleNav"
-            data-nav-close-btn
-          >
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <a href="/" class="navbar-link" data-navbar-link>Giới thiệu</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#about" class="navbar-link" data-navbar-link>Danh mục</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#services" class="navbar-link" data-navbar-link>Dịch vụ</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#features" class="navbar-link" data-navbar-link>Tư Vấn</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="#blog" class="navbar-link" data-navbar-link>Liên hệ</a>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <a href="#" class="navbar-link" data-navbar-link>Contact Us</a>
-          </li> -->
-        </ul>
-      </nav>
-
-      <button
-        class="nav-open-btn"
-        aria-label="Open Menu"
-        @click="toggleNav"
-        data-nav-open-btn
-      >
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-    </div>
-  </header>
-  <div class="wrapper row3 mt-5" style="padding-top: 15px">
-    <main class="hoc container clear bv mt-5">
-      <div style="min-height: 500px mt-5" class="padding-top15">
+<HeaderShop>  </HeaderShop>
+<menu-shop></menu-shop>
+  <div class="wrapper row3 " style="padding-top: 15px">
+    <main class="hoc container clear bv ">
+      <div style="min-height: 500px " class="padding-top15">
         <div
           class="title-bai-viet"
-          style="color: white; font-size: 30px; font-weight: 600"
+          style="color: rgb(23, 162, 184); font-size: 30px; font-weight: 600"
           v-html="titleHeThong"
         ></div>
         <div v-html="contentHeThong" class="conntent-bai-viet mt-4"></div>
       </div>
     </main>
   </div>
+  <SlideProduct></SlideProduct>
+  <footer-v-nnike></footer-v-nnike>
 </template>
 
 <script>
 import { apiQuanTriBaiViet } from "@/assets/js/api";
 import axios from "axios";
 import { imageUrls } from "@/assets/js/imgUrl";
+import HeaderShop from "@/views/Menu/headerShop.vue";
+import MenuShop from '@/views/Menu/menuShop.vue';
+import FooterVNnike from '@/views/Footer/FooterVNnike.vue';
+import SlideProduct from "../Product/SlideProduct.vue";
 
 export default {
-  components: {},
+  components: {HeaderShop, MenuShop, FooterVNnike,SlideProduct},
   data() {
     return {
       isMenuVisible: false,
@@ -146,7 +91,7 @@ export default {
       }
     },
     decodeBase64(encodedString) {
-      var decode = this.decodeBase64(encodedString);
+      var decode = atob(encodedString);
       decode = decodeURIComponent(escape(decode));
       return decode;
     },
@@ -158,7 +103,7 @@ export default {
   font-size: 16.4px;
 }
 ::v-deep(.content-bai-viet) {
-  color: white;
+  color: rgb(22, 23, 24);
   text-align: justify !important;
 }
 ::v-deep(.content-bai-viet h3),
@@ -167,7 +112,7 @@ export default {
 ::v-deep(.content-bai-viet div),
 ::v-deep(.content-bai-viet p) {
   text-align: justify !important;
-  color: white !important;
+  color: rgb(15, 16, 17) !important;
 }
 ::v-deep(.content-bai-viet img) {
   width: 100% !important;
