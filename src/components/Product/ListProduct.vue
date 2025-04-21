@@ -72,6 +72,7 @@ import ProductDetail from "@/components/Product/DetailProduct.vue";
 // eslint-disable-next-line no-unused-vars
 import { getProducts } from "../api/apiUrl";
 import axios from "axios";
+import { header } from "@/assets/js/snapService";
 
 export default {
   name: "ProductList",
@@ -95,7 +96,7 @@ export default {
     },
     getProducts() {
       axios
-        .get("http://103.200.23.139:3001/api/sanpham/services/getSanPham")
+        .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham", {headers: header})
         .then((res) => {
           this.products = res.data.response.slice(0,8);
           console.log("this.products ", this.products);

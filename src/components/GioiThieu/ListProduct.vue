@@ -55,7 +55,7 @@ export default {
   methods: {
     getProducts() {
       axios
-        .get("http://localhost:3001/api/sanpham/services/getSanPham")
+        .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham")
         .then((res) => {
           this.products = res.data.response;
           console.log("Products fetched:", this.products);

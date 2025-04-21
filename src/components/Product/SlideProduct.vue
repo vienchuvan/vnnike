@@ -67,7 +67,7 @@ export default {
 
     getProducts() {
       axios
-        .get("http://103.200.23.139:3001/api/sanpham/services/getSanPham", {headers: header})
+        .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham", {headers: header})
         .then((res) => {
           this.products = res.data.response;
         })

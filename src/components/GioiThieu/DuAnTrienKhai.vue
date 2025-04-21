@@ -30,6 +30,7 @@ import axios from "axios";
 import HeaderShop from '@/views/Menu/headerShop.vue';
 import MenuShop from '@/views/Menu/menuShop.vue';
 import FooterVNnike from '@/views/Footer/FooterVNnike.vue';
+import { header } from "@/assets/js/snapService";
 export default {
   name: "DuAnList",
   components: {HeaderShop, MenuShop,FooterVNnike},
@@ -50,7 +51,7 @@ export default {
     },
     getProducts() {
       axios
-        .get("http://103.200.23.139:3001/api/duan/services/getDuAn")
+        .get("https://sonvnnike.com.vn/api/duan/services/getDuAn", {headers:header})
         .then((res) => {
           this.products = res.data.response;
           console.log("this.products ", this.products);

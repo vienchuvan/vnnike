@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { header } from "@/assets/js/snapService";
 import axios from "axios";
 
 export default {
@@ -45,7 +46,7 @@ export default {
     },
     getProducts() {
       axios
-      .get("https://sonvnnike.com.vn//api/duan/services/getDuAn")
+      .get("https://sonvnnike.com.vn/api/duan/services/getDuAn",{headers:header})
         .then((res) => {
           this.products = res.data.response.slice(0, 8);
           console.log("this.products ", this.products);
