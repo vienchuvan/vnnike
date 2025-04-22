@@ -61,7 +61,7 @@
         class="col-12 col-md-3 wow fadeInDown floating-image"
         data-wow-delay="0.3s"
       >
-      <a href="#"> 
+      <a href="/danh-muc/son-noi-that"> 
         <img
           style="width: 300px"
           :src="imageUrls.homeimgSNT"
@@ -71,7 +71,7 @@
         class="col-12 col-md-3 wow fadeInDown floating-image"
         data-wow-delay="0.5s"
       >
-      <a href="#"> 
+      <a href="/danh-muc/son-ngoai-that"> 
         <img
           style="width: 300px"
            :src="imageUrls.homeimgSNGT"
@@ -81,7 +81,7 @@
         class="col-12 col-md-3 wow fadeInDown floating-image"
         data-wow-delay="0.8s"
       >
-      <a href="#"> 
+      <a href="/danh-muc/son-chong-tham"> 
         <img
           style="width: 300px"
          :src="imageUrls.homeimgSCT"
@@ -91,7 +91,7 @@
         class="col-12 col-md-3 wow fadeInDown floating-image"
         data-wow-delay="0.11s"
       >
-      <a href="#"> 
+      <a href="/danh-muc/son-lot"> 
         <img
           style="width: 300px"
            :src="imageUrls.homeimgSL"

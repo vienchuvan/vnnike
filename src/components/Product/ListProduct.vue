@@ -12,7 +12,7 @@
           :key="product.id"
         >
           <router-link
-            :to="{ path: '/product/' + product.tenSP, state: { product } }"
+            :to="{ path: '/product/'+product.idDanhMuc+'vnk' + product.tenSP, state: { product } }"
           >
             <div class="card mt-3 h-100 d-flex flex-column"  style="border-radius: 15px;
     border: 2px solid #17a2b8;  ">
@@ -58,7 +58,7 @@
                 <div class="text-center">
                   <a
                     class="btn btn-outline-green mt-auto"
-                    href="#"
+                    href="/san-pham"
                     role="button"
                     ><span class="bi bi-cart4"></span>Xem thêm</a
                   >

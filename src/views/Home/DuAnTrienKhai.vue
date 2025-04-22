@@ -3,7 +3,7 @@
      <div class="w-100 mt-3" style="border-bottom: 1px dotted"></div>
   <div class="container-fluid mt-5">
     <div class="row m-auto">
-      <div class="col-6 col-md-3 mb-4 px-2" v-for="product in products" :key="product.id">
+      <div class="col-12 col-md-3 mb-4 px-2" v-for="product in products" :key="product.id">
         <!--card 1-->
         <div
           class="card-backgrounds m-auto"

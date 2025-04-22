@@ -1,6 +1,7 @@
 export const imageUrls = {
     logoCty: "img/logo/logoCty.png",
 
+    logoCtyXanh: "img/logo/logCtyXanh.png",
 
  banner1 : "img/banner/banner1.jpeg",
  banner2 : "img/banner/banner2.jpeg",
@@ -16,4 +17,6 @@ export const imageUrls = {
  homeimgSL : "img/Home/SL.png",
  homeimgSNGT : "img/Home/SNGT.png",
  homeimgSNT : "img/Home/SNT.png",
+
+ iconZalo : "img/logo/Zalo.png",
 }

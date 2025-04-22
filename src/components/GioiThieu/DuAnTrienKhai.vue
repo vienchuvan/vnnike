@@ -5,7 +5,7 @@
      <div class="w-100 mt-3" style="border-bottom: 1px dotted"></div>
   <div class="container-fluid mt-5">
     <div class="row m-auto">
-      <div class="col-6 col-md-3 mb-4 px-2" v-for="product in products" :key="product.id">
+      <div class="col-12 col-md-3 mb-4 px-2" v-for="product in products" :key="product.id">
         <!--card 1-->
         <div
           class="card-backgrounds m-auto"
@@ -23,6 +23,7 @@
     </div>
   </div>
   <footer-v-nnike></footer-v-nnike>
+  <FloattingContact></FloattingContact>
 </template>
 
 <script>
@@ -31,9 +32,11 @@ import HeaderShop from '@/views/Menu/headerShop.vue';
 import MenuShop from '@/views/Menu/menuShop.vue';
 import FooterVNnike from '@/views/Footer/FooterVNnike.vue';
 import { header } from "@/assets/js/snapService";
+import FloattingContact from "./FloattingContact.vue";
+
 export default {
   name: "DuAnList",
-  components: {HeaderShop, MenuShop,FooterVNnike},
+  components: {HeaderShop, MenuShop,FooterVNnike,FloattingContact},
   data() {
     return {
       products: [],

@@ -15,6 +15,7 @@
   </div>
   <SlideProduct></SlideProduct>
   <footer-v-nnike></footer-v-nnike>
+  <FloattingContact></FloattingContact>
 </template>
 
 <script>
@@ -25,9 +26,10 @@ import HeaderShop from "@/views/Menu/headerShop.vue";
 import MenuShop from '@/views/Menu/menuShop.vue';
 import FooterVNnike from '@/views/Footer/FooterVNnike.vue';
 import SlideProduct from "../Product/SlideProduct.vue";
+import FloattingContact from "./FloattingContact.vue";
 
 export default {
-  components: {HeaderShop, MenuShop, FooterVNnike,SlideProduct},
+  components: {HeaderShop, MenuShop, FooterVNnike,SlideProduct,FloattingContact},
   data() {
     return {
       isMenuVisible: false,
