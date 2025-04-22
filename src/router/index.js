@@ -8,6 +8,7 @@ import DboardQuanTri from '@/components/Dboard/DboardQuanTri.vue';
 import BlogGioiThieu from '@/components/GioiThieu/BlogGioiThieu.vue';
 import DuAnTrienKhaiVue from '@/components/GioiThieu/DuAnTrienKhai.vue';
 import ListProductVue from '@/components/GioiThieu/ListProduct.vue';
+import BangMaMau from '@/components/GioiThieu/BangMaMau.vue';
 
 
 const routes = [
@@ -54,6 +55,9 @@ const routes = [
   },
   {
     path: '/bai-viet/:shortUrl', name: 'baiviet', component: BlogGioiThieu
+   },
+   {
+    path: '/bang-mau', name: 'BangMaMau', component: BangMaMau
    },
 ];
 
