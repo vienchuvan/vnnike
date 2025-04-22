@@ -21,7 +21,7 @@
             <a href="/danh-muc/son-noi-that" class="nav-item nav-link"
               >Sơn nội thất
             </a>
-            <a href="/danh-muc/son-noi-that" class="nav-item nav-link"
+            <a href="/danh-muc/son-ngoai-that" class="nav-item nav-link"
               >Sơn ngoại thất</a
             >
             <a href="/danh-muc/son-lot" class="nav-item nav-link">Sơn lót</a>
@@ -73,7 +73,7 @@
                 >Dự án</a
               >
               <a
-                href="/bai-viet/bang-mau"
+                href="/bang-mau"
                 class="nav-item nav-link"
                 :class="{ active: $route.path.endsWith('/bang-mau') }"
                 >Bảng màu</a

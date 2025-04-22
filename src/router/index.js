@@ -8,12 +8,9 @@ import DboardQuanTri from '@/components/Dboard/DboardQuanTri.vue';
 import BlogGioiThieu from '@/components/GioiThieu/BlogGioiThieu.vue';
 import DuAnTrienKhaiVue from '@/components/GioiThieu/DuAnTrienKhai.vue';
 import ListProductVue from '@/components/GioiThieu/ListProduct.vue';
-<<<<<<< HEAD
 import BangMaMau from '@/components/GioiThieu/BangMaMau.vue';
-=======
 import ListSanPhamTheoDanhMucVue from '@/components/GioiThieu/ListSanPhamTheoDanhMuc.vue';
 import LienHeVue from '@/components/GioiThieu/LienHe.vue';
->>>>>>> 9197ba52e74a60ac30045fbdb1fe49ac8e648181
 
 
 const routes = [

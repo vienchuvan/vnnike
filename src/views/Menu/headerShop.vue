@@ -10,7 +10,7 @@
          #ff4500   );">
       <div class="col-lg-4">
         <a href="" class="text-decoration-none">
-          <img style="width: 100px; " :src="imageUrls.logoCtyXanh" />
+          <img style="width: 130px; " :src="imageUrls.logoCtyXanh" />
         </a>
       </div>
       <div class="col-lg-4 col-8 text-left">

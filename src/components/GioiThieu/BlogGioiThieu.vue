@@ -11,9 +11,10 @@
         ></div>
         <div v-html="contentHeThong" class="conntent-bai-viet mt-4"></div>
       </div>
+      <ListProduct></ListProduct>
+
     </main>
   </div>
-  <SlideProduct></SlideProduct>
   <footer-v-nnike></footer-v-nnike>
   <FloattingContact></FloattingContact>
 </template>
@@ -25,11 +26,11 @@ import { imageUrls } from "@/assets/js/imgUrl";
 import HeaderShop from "@/views/Menu/headerShop.vue";
 import MenuShop from '@/views/Menu/menuShop.vue';
 import FooterVNnike from '@/views/Footer/FooterVNnike.vue';
-import SlideProduct from "../Product/SlideProduct.vue";
 import FloattingContact from "./FloattingContact.vue";
+import ListProduct from "../Product/ListProduct.vue";
 
 export default {
-  components: {HeaderShop, MenuShop, FooterVNnike,SlideProduct,FloattingContact},
+  components: {HeaderShop, MenuShop, FooterVNnike,FloattingContact, ListProduct},
   data() {
     return {
       isMenuVisible: false,
