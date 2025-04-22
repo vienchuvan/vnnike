@@ -8,7 +8,12 @@ import DboardQuanTri from '@/components/Dboard/DboardQuanTri.vue';
 import BlogGioiThieu from '@/components/GioiThieu/BlogGioiThieu.vue';
 import DuAnTrienKhaiVue from '@/components/GioiThieu/DuAnTrienKhai.vue';
 import ListProductVue from '@/components/GioiThieu/ListProduct.vue';
+<<<<<<< HEAD
 import BangMaMau from '@/components/GioiThieu/BangMaMau.vue';
+=======
+import ListSanPhamTheoDanhMucVue from '@/components/GioiThieu/ListSanPhamTheoDanhMuc.vue';
+import LienHeVue from '@/components/GioiThieu/LienHe.vue';
+>>>>>>> 9197ba52e74a60ac30045fbdb1fe49ac8e648181
 
 
 const routes = [
@@ -21,7 +26,11 @@ const routes = [
     path: '/product/:nameProduct',
     name: 'ProductDetail',
     component: ProductDetail,
-    props: true
+  },
+  {
+    path: '/danh-muc/:nameDanhMuc',
+    name: 'nameDanhMuc',
+    component: ListSanPhamTheoDanhMucVue,
   },
   {
     path: '/gio-hang.html',
@@ -42,6 +51,12 @@ const routes = [
     path: '/san-pham',
     name: 'sanpham',
     component: ListProductVue
+  },
+
+  {
+    path: '/lien-he',
+    name: 'lienhe',
+    component: LienHeVue
   },
   {
     path: '/dangnhap',

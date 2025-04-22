@@ -2,24 +2,38 @@
   <headerShop></headerShop>
   <menuShop></menuShop>
   <div class="container pb-5">
-    <div class="row px-xl-5">
-      <div class="col-lg-5 mb-30">
+    <div class="row ">
+      <div class="col-lg-2 p-0 h-auto mb-30 danh-muc">
+        <table class="rwd-table p-1">
+          <tbody>
+            <tr>
+              <th>DANH MỤC</th>
+            </tr>
+            <tr v-for="item in danhMuc" :key="item.idDanhMuc">
+              <td class="p-1" style="font-size: 13px;" data-th="Supplier Code">
+                {{ item.tenDanhMuc }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-4 mb-30">
         <div id="product-carousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner bg-light">
             <div class="carousel-item active">
-              <img class="w-100 h-100" alt="Image" :src="product.imgProduct" />
+              <img class="w-100 h-100" alt="Image" :src="product.imgSP" />
             </div>
             <div class="carousel-item">
-              <img class="w-100 h-100" alt="Image" :src="product.imgProduct" />
+              <img class="w-100 h-100" alt="Image" :src="product.imgSP" />
             </div>
             <div class="carousel-item">
-              <img class="w-100 h-100" alt="Image" :src="product.imgProduct" />
+              <img class="w-100 h-100" alt="Image" :src="product.imgSP" />
             </div>
             <div class="carousel-item">
-              <img class="w-100 h-100" alt="Image" :src="product.imgProduct" />
+              <img class="w-100 h-100" alt="Image" :src="product.imgSP" />
             </div>
           </div>
-          <input name="" id="imgProduct" v-model="product.imgProduct" hidden />
+          <input name="" id="imgProduct" v-model="product.imgSP" hidden />
           <a
             class="carousel-control-prev"
             href="#product-carousel"
@@ -37,18 +51,13 @@
         </div>
       </div>
 
-      <div class="col-lg-7 h-auto mb-30">
+      <div class="col-lg-6 h-auto mb-30">
         <div
           class="h-100 bg-light p-30 d-flex flex-column align-items-sm-baseline"
         >
-          <h3>{{ product.nameProduct }}</h3>
+          <h3>{{ product.tenSP }}</h3>
           <input name="" id="id" v-model="product.id" hidden />
-          <input
-            name=""
-            id="nameProduct"
-            v-model="product.nameProduct"
-            hidden
-          />
+          <input name="" id="nameProduct" v-model="product.tenSP" hidden />
 
           <div class="d-flex mb-3">
             <div class="text-primary mr-2">
@@ -62,7 +71,7 @@
           </div>
 
           <h3 class="font-weight-semi-bold mb-4" style="color: red">
-            {{ formatPrice(product.price) }} đ
+            <!-- {{ formatPrice(product.price) }} đ -->
           </h3>
           <input name="" id="price" v-model="product.price" hidden />
 
@@ -71,36 +80,53 @@
           </div>
 
           <div class="d-flex align-items-center mb-4 pt-2">
-            <div class="input-group quantity mr-3" style="width: 300px">
-              
-
-              <input
-                id="sl"
-                name=""
-                v-model="product.sl"
-                type="number"
-                class="form-control bg-secondary border-0 text-center"
-                placeholder="Nhập số lượng cần mua"
-              />
-             
-            </div>
-            <button class="btn btn-primary px-3 border-radius-10" type="button" @click="addCard">
-              <i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng
+            <button
+              class="btn btn-primary px-3 border-radius-10"
+              type="button"
+            >
+              <i class="fa fa-shopping-cart mr-1"></i> Giá cả liên hệ
             </button>
           </div>
           <div class="d-flex flex-column w-100">
             <div class="d-flex m-auto w-100">
-              <button class="btn btn-primary-face px-3 w-50 border-radius-10" type="button" >
-                <i class="fab fa-facebook-f mr-1"></i><a style="color: white;" href="https://www.facebook.com/vilalandcompany" target="_blank">Chat Facebook </a> </button>
+              <button
+                class="btn btn-primary-face px-3 w-50 border-radius-10"
+                type="button"
+              >
+                <i class="fab fa-facebook-f mr-1"></i
+                ><a
+                  style="color: white"
+                  href="#"
+                  target="_blank"
+                  >Chat Facebook
+                </a>
+              </button>
 
-                <button class="btn btn-primary-zalo px-3 w-50  border-radius-10" type="button" style="margin-left: 10px;">
-                <img class="img-icon" src="https://vimass.vn/vmbank/services/media/getImage?id=iconzalo.png" >  Chat Zalo </button>
+              <a
+                class="btn btn-primary-zalo px-3 w-50 border-radius-10"
+                type="button"
+                style="margin-left: 10px"
+                href="https://chat.zalo.me/?phone=0916186346"
+                target="_blank"
+              >
+                <img
+                  class="img-icon"
+                  src="https://vimass.vn/vmbank/services/media/getImage?id=iconzalo.png"
+                />
+                Chat Zalo
+              </a>
             </div>
 
             <div class="d-flex m-auto w-100">
-              <button class="btn btn-primary-live px-3 w-100  mt-2 border-radius-10" type="button">
-                <i class="fa fa-phone-square" aria-hidden="true"></i> Liên hệ trực tiếp : 0979951954 </button>
-
+              <a
+                class="btn btn-primary-live px-3 w-100 mt-2 border-radius-10"
+               href="tel:0916186346"
+                target="_blank"
+                type="button"
+              >
+                <i class="fa fa-phone-square" aria-hidden="true"></i> Liên hệ
+                trực tiếp : 0916.186.346
+              </a>
             </div>
           </div>
 
@@ -124,123 +150,33 @@
         </div>
       </div>
     </div>
-    <div class="row px-xl-5">
-      <div class="col">
-        <div class="bg-light p-30">
-          <div class="nav nav-tabs mb-4">
-            <a
-              class="nav-item nav-link text-dark active"
-              data-toggle="tab"
-              href="#tab-pane-1"
-              >Chi tiết
-            </a>
-            <a
-              class="nav-item nav-link text-dark"
-              data-toggle="tab"
-              href="#tab-pane-3"
-              >Reviews (0)</a
-            >
-          </div>
-          <div class="tab-content">
-            <div class="tab-pane fade show active" id="tab-pane-1">
-              <h4 class="mb-3">Chi tiết</h4>
-              <p>{{ product.detail }}</p>
-            </div>
-
-            <div class="tab-pane fade" id="tab-pane-3">
-              <div class="row">
-                <div class="col-md-6">
-                  <h4 class="mb-4">1 review for "Product Name"</h4>
-                  <div class="media mb-4">
-                    <img
-                      src="img/user.jpg"
-                      alt="Image"
-                      class="img-fluid mr-3 mt-1"
-                      style="width: 45px"
-                    />
-                    <div class="media-body">
-                      <h6>
-                        John Doe<small> - <i>01 Jan 2045</i></small>
-                      </h6>
-                      <div class="text-primary mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                      </div>
-                      <p>
-                        Diam amet duo labore stet elitr ea clita ipsum, tempor
-                        labore accusam ipsum et no at. Kasd diam tempor rebum
-                        magna dolores sed sed eirmod ipsum.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <h4 class="mb-4">Leave a review</h4>
-                  <small
-                    >Your email address will not be published. Required fields
-                    are marked *</small
-                  >
-                  <div class="d-flex my-3">
-                    <p class="mb-0 mr-2">Your Rating * :</p>
-                    <div class="text-primary">
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </div>
-                  </div>
-                  <form>
-                    <div class="form-group">
-                      <label for="message">Your Review *</label>
-                      <textarea
-                        id="message"
-                        cols="30"
-                        rows="5"
-                        class="form-control"
-                      ></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="name">Your Name *</label>
-                      <input type="text" class="form-control" id="name" />
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Your Email *</label>
-                      <input type="email" class="form-control" id="email" />
-                    </div>
-                    <div class="form-group mb-0">
-                      <input
-                        type="submit"
-                        value="Leave Your Review"
-                        class="btn btn-primary px-3"
-                      />
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ListProduct></ListProduct>
   </div>
-  <!-- Shop Detail End -->
+  <FooterVNnikeVue></FooterVNnikeVue>
+  <FloattingContact></FloattingContact>
 </template>
+
 <style>
 </style>
 <script>
 import headerShop from "@/views/Menu/headerShop.vue";
 import menuShop from "@/views/Menu/menuShop.vue";
-import axiosAPI from "@/components/api/axiosAPI";
-import { postAddCart } from "@/components/api/apiUrl";
+import axios from "axios";
+// eslint-disable-next-line no-unused-vars
+import { apiDanhMuc, apiGetDanhMuc, apiSanPham } from "@/assets/js/api";
+// eslint-disable-next-line no-unused-vars
+import SlideProduct from "./SlideProduct.vue";
+import FooterVNnikeVue from "@/views/Footer/FooterVNnike.vue";
+import ListProduct from "./ListProduct.vue";
+import { header } from "@/assets/js/snapService";
+import FloattingContact from "../GioiThieu/FloattingContact.vue";
 
 export default {
   components: {
     headerShop,
     menuShop,
+    ListProduct,
+    FooterVNnikeVue,FloattingContact
   },
   name: "ProductDetail",
 
@@ -248,65 +184,166 @@ export default {
     return {
       // product: {},
       product: {
-        nameProduct: "",
-        price: 0,
-        sl: 0,
-        id: 0,
-        imgProduct: "",
-        user_id: "",
+        tenSP: "",
+        imgSP: "",
       },
-      user:{
-        user: {
-        cartItems: [] // Khởi tạo cartItems rỗng
-      }
-      }
+      danhMuc:''
     };
   },
   created() {
     const nameProduct = this.$route.params.nameProduct;
+    console.log("nameProduct ", nameProduct);
+
     this.fetchProductByName(nameProduct);
   },
 
+  mounted() {
+    this.fetchDanhMuc();
+  },
+
   methods: {
-    addCard() {
-  const user = JSON.parse(localStorage.getItem("user"));
-  this.product.user_id = user.username;
-
-
-  axiosAPI
-    .post(postAddCart, [this.product]) // Send the product object directly
-    .then((response) => {
-      console.log("codeKoCanTest ", response.data);
-      alert(response.data);
-    })
-    .catch((error) => {
-      console.error("Error adding product", error);
-    });
-},
-    updateCardItem(newCartItem){
-      const currentCartItems = this.user.user.cartItems || [];
-      currentCartItems.push(newCartItem);
-
-      // Cập nhật cartItems trong localStorage
-      this.user.user.cartItems = currentCartItems;
-      localStorage.setItem("user", JSON.stringify(this.user));
-    },
-    
-    formatPrice(value) {
-      let val = parseFloat((value / 1).toFixed(2)).toString();
-      return val.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
-    fetchProductByName(nameProduct) {
-      axiosAPI
-        .get(`/getProductByName/${nameProduct}`)
+    fetchDanhMuc() {
+      axios
+        .get(apiGetDanhMuc,{
+          headers:header
+        })
         .then((response) => {
           console.log(response.data);
-          this.product = response.data;
+          this.danhMuc = response.data.response;
+          console.log("this.danhMuc ", this.danhMuc);
+          
         })
         .catch((error) => {
           console.error("Error fetching product:", error);
         });
     },
+
+    async fetchProductByName(shortUrl) {
+      var parts = shortUrl.split("vnk");
+      var idDanhMuc = parts[0]; // "1"
+      var tenSP = decodeURIComponent(parts[1]);
+
+      console.log({
+        funcId: 12,
+        tenSP: tenSP,
+        idDanhMuc: idDanhMuc,
+      });
+
+      try {
+        const response = await axios.post(apiSanPham, {
+          funcId: 12,
+          tenSP: tenSP,
+          idDanhMuc: idDanhMuc,
+        });
+        // console.log("this.product ", response.data);
+        this.product = response.data.result[0];
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    },
   },
 };
 </script>
+
+<style scoped>
+.rwd-table {
+  margin: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.rwd-table tr:first-child {
+  border-top: none;
+  background: #428bca;
+  color: #fff;
+}
+
+.rwd-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+.rwd-table tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+.rwd-table th {
+  display: none;
+}
+
+.rwd-table td {
+  display: block;
+}
+
+.rwd-table td:first-child {
+  margin-top: 0.5em;
+}
+
+.rwd-table td:last-child {
+  margin-bottom: 0.5em;
+}
+
+.rwd-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+  text-align: left;
+}
+
+.rwd-table {
+  color: #333;
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+
+.rwd-table tr {
+  border-color: #bfbfbf;
+}
+
+.rwd-table th,
+.rwd-table td {
+  padding: 0.5em 1em;
+}
+@media screen and (max-width: 601px) {
+  .rwd-table tr:nth-child(2) {
+    border-top: none;
+  }
+}
+@media (max-width: 576px) {
+  .danh-muc {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .rwd-table tr:hover:not(:first-child) {
+    background-color: #d8e7f3;
+  }
+  .rwd-table td:before {
+    display: none;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    display: table-cell;
+    padding: 0.25em 0.5em;
+  }
+  .rwd-table th:first-child,
+  .rwd-table td:first-child {
+    padding-left: 0;
+  }
+  .rwd-table th:last-child,
+  .rwd-table td:last-child {
+    padding-right: 0;
+  }
+  .rwd-table th,
+  .rwd-table td {
+    padding: 1em !important;
+  }
+}
+</style>

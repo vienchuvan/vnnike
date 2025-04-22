@@ -9,4 +9,13 @@ export const apiGetLayBaiViet = localhost + "api/quantri/services/getBaiViet";
 
 // export const apiQuanTriBaiViet = localhost + "api/quantri/services/apiBaiViet";
 
+<<<<<<< HEAD
 export const apiQuanTriBaiViet = localhost + "api/quantri/services/apiBaiViet";
+=======
+export const apiQuanTriBaiViet = domain + "api/quantri/services/apiBaiViet";
+
+
+export const apiSanPham = domain + "api/sanpham/services/apiSanPham";
+export const apiDanhMuc = domain + "api/danhmuc/services/apiDanhMuc";
+export const apiGetDanhMuc = domain + "api/danhmuc/services/getDanhMuc";
+>>>>>>> 9197ba52e74a60ac30045fbdb1fe49ac8e648181

@@ -120,7 +120,7 @@
             />
             <div class="offer-text">
               <h3 class="text-white mb-3">Sản phẩm</h3>
-              <a href="" class="btn btn-primary">Xem ngay</a>
+              <a href="/san-pham" class="btn btn-primary">Xem ngay</a>
             </div>
           </div>
           <div class="product-offer mb-30" style="height: 200px">
@@ -146,6 +146,7 @@
     <DuAnTrienKhai></DuAnTrienKhai>
     <FooterVNnike></FooterVNnike>
   </div>
+  <FloattingContact></FloattingContact>
 </template>
    
    
@@ -160,11 +161,12 @@ import tuVan from "./TuVanFree.vue";
 import ViSaoChonHome from "./ViSaoChonHome.vue";
 import DuAnTrienKhai from "./DuAnTrienKhai.vue";
 import FooterVNnike from "../Footer/FooterVNnike.vue";
+import FloattingContact from "@/components/GioiThieu/FloattingContact.vue";
 
 export default {
   components: {
     HeaderShop,
-    MenuShop,
+    MenuShop,FloattingContact,
     // eslint-disable-next-line vue/no-unused-components
     ListProducts,
     // eslint-disable-next-line vue/no-unused-components

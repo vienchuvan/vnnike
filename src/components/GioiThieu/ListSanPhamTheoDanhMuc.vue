@@ -1,22 +1,18 @@
 <template>
   <header-shop></header-shop>
   <menu-shop></menu-shop>
-  <section >
+  <section class=" ">
     <div class="container mt-5">
-      <div v-if="products && products.length">
+      <div v-if="filteredProducts.length">
         <ProductCate
-          v-for="category in categories"
-          :key="category.id"
-          :products="filteredProducts(category.id)"
-          :title="category.name"
-           :nameDanhMuc="slugify(category.name)"
+          :products="filteredProducts"
+          :title="categoryName"
         />
       </div>
       <ProductDetail :product="selectedProduct" v-if="selectedProduct" />
     </div>
     <footer-v-nnike></footer-v-nnike>
   </section>
-<FloattingContact></FloattingContact>
 </template>
 
 <script>
@@ -26,7 +22,6 @@ import MenuShop from "@/views/Menu/menuShop.vue";
 import ProductDetail from "@/components/Product/DetailProduct.vue";
 import FooterVNnike from "@/views/Footer/FooterVNnike.vue";
 import ProductCate from "../Product/ProductCate.vue";
-import FloattingContact from "./FloattingContact.vue";
 
 export default {
   name: "ProductList",
@@ -34,7 +29,7 @@ export default {
     HeaderShop,
     MenuShop,
     FooterVNnike,
-    ProductDetail,FloattingContact,
+    ProductDetail,
     ProductCate,
   },
   data() {
@@ -47,21 +42,37 @@ export default {
         { id: 3, name: "SƠN LÓT" },
         { id: 4, name: "SƠN CHỐNG THẤM" },
         { id: 5, name: "SƠN CHỐNG NÓNG" },
-        
       ],
     };
   },
+  computed: {
+    categoryName() {
+      const match = this.categories.find(
+        cat => this.slugify(cat.name) === this.$route.params.nameDanhMuc
+      );
+      return match ? match.name : "Danh mục không xác định";
+    },
+    filteredProducts() {
+      const match = this.categories.find(
+        cat => this.slugify(cat.name) === this.$route.params.nameDanhMuc
+      );
+      return match
+        ? this.products.filter(p => p.idDanhMuc === match.id)
+        : [];
+    }
+  },
   created() {
+    console.log("URL danh mục:", this.$route.params.nameDanhMuc); 
     this.getProducts();
   },
   methods: {
     slugify(name) {
-    return name
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")  // xoá dấu tiếng Việt
-      .replace(/\s+/g, "-");
-  },
+      return name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/\s+/g, "-");
+    },
     getProducts() {
       axios
         .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham")
@@ -72,11 +83,6 @@ export default {
         .catch((error) => {
           console.error("Error fetching products:", error);
         });
-    },
-    filteredProducts(categoryId) {
-      return this.products.filter(
-        (product) => product.idDanhMuc === categoryId
-      );
     },
     goToProductDetal(product) {
       this.selectedProduct = product;
