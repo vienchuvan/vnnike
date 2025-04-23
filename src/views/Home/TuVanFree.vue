@@ -1,28 +1,29 @@
 <template>
-    <section >
-        <div style="text-align:justify"> 
-  <h2  style="color:#fff " class=" wow fadeInLeft"
+  <section>
+    <div style="text-align:justify"> 
+      <h2 style="color:#fff" class="wow fadeInLeft"
           data-wow-duration="2s"
           data-wow-delay="0.3s">TƯ VẤN MÀU SƠN</h2>
 
-          <div class=" wow fadeInRight"
+      <div class="wow fadeInRight"
           data-wow-duration="3s"
           data-wow-delay="0.5s"> 
-  <h4  class="mt-5" style="color:#fff"> GẦN 2000 MÀU SƠN</h4>
-  <p>Chúng tôi sẽ liên hệ lại ngay với quý khách để giải đáp mọi thắc mắc về màu sơn VinaGroup.</p>
- </div>
-  <button>Liên hệ ngay</button>
-  </div>
-  <video class="video-background" poster="https://images.unsplash.com/photo-1587587448844-c1036562fec1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNzg5Mjk2MA&ixlib=rb-1.2.1&q=85" autoplay muted loop>
-    <source src="img/video/thanhPho.mp4" type="video/mp4">
-  </video>
-</section>
+        <h4 class="mt-5" style="color:#fff"> GẦN 2000 MÀU SƠN</h4>
+        <p>Chúng tôi sẽ liên hệ lại ngay với quý khách để giải đáp mọi thắc mắc về màu sơn VinaGroup.</p>
+      </div>
+      <button><a href="/lien-he" style="color: #fff;">Liên hệ ngay</a></button>
+    </div>
+    <video class="video-background" poster="https://images.unsplash.com/photo-1587587448844-c1036562fec1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNzg5Mjk2MA&ixlib=rb-1.2.1&q=85" autoplay muted loop playsinline>
+      <source src="img/video/thanhPho.mp4" type="video/mp4">
+    </video>
+  </section>
 </template>
 
 <script>
 import { imageUrls } from "@/assets/js/imgUrl";
 import WOW from "wowjs";
 import { onMounted } from "vue";
+
 export default {
   data() {
     return {
@@ -36,6 +37,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .video-background {
   position: absolute;
@@ -49,8 +51,6 @@ export default {
   margin: 0;
   z-index: -2;
 }
-
-
 
 section {
   position: relative;
@@ -77,8 +77,8 @@ section {
 }
 
 h1 {
- font-size: 3.7em;
- margin: 0 0 0.3em;
+  font-size: 3.7em;
+  margin: 0 0 0.3em;
 }
 
 p {

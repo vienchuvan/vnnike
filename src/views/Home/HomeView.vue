@@ -42,7 +42,7 @@
                     <p >liên tục tuyển đại lý trực tiếp với tổng công ty trên toàn quốc với chiết khấu và nhiều ưu đãi hấp dẫn </p>
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="#"
+                      href="/bai-viet/chinh-sach-tuyen-dai-ly-cua-cong-ty"
                       >Tìm hiểu chính sách</a
                     >
                   </div>
@@ -71,7 +71,7 @@
                       <p>Chúng tôi mong muốn đem lại sản phẩm sơn tốt nhất cho người Việt </p>
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="#"
+                      href="/san-pham"
                       >Sản phẩm</a
                     >
                   </div>
@@ -101,7 +101,7 @@
 
                     <a
                       class="btn btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                      href="#"
+                      href="/lien-he"
                       >Đăng ký ngay</a
                     >
                   </div>
@@ -132,7 +132,7 @@
             />
             <div class="offer-text">
               <h3 class="text-white mb-3">Tư vấn</h3>
-              <a href="" class="btn btn-primary">Xem ngay</a>
+              <a href="/bai-viet/tu-van-chon-son" class="btn btn-primary">Xem ngay</a>
             </div>
           </div>
         </div>
