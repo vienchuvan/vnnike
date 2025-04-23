@@ -12,9 +12,9 @@
         </a>
       </li>
       <li :class="{ active: selectedMenu === 'danhmuc' }" @click="selectMenu('danhmuc')">
-        <a href="#">
+        <a >
           <i class="bx bxs-shopping-bag-alt bx-sm"></i>
-          <span class="text">Danh mục</span>
+          <span class="text">Sản Phẩm</span>
         </a>
       </li>
       <li :class="{ active: selectedMenu === 'baiviet' }" @click="selectMenu('baiviet')">
@@ -44,7 +44,7 @@
       <h2>Dashboard Content</h2>
     </div>
     <div v-if="selectedMenu === 'danhmuc'">
-      <h2>Danh mục Content</h2>
+      <dboard-san-pham></dboard-san-pham>
     </div>
     <div v-if="selectedMenu === 'baiviet'">
       <DboardBaiViet />
@@ -62,10 +62,12 @@
 import { useAuthStore } from "@/assets/js/dboard/auth";
 import DboardBaiViet from "./DboardBaiViet.vue";
 import DboardTemplate from "./DboardTemplate.vue";
+import DboardSanPham from './DboardSanPham.vue';
 
 export default {
   components: {
-    DboardBaiViet,DboardTemplate
+    DboardBaiViet,DboardTemplate,
+    DboardSanPham
   },
   data() {
     return {

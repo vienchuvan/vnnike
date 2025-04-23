@@ -1,21 +1,17 @@
  // eslint-disable-next-line no-unused-vars
  var ip = "http://103.200.23.139:3001/";
  // eslint-disable-next-line no-unused-vars
- var localhost = "http://localhost:3000/";
+ var localhost = "http://localhost:3001/";
  // eslint-disable-next-line no-unused-vars
  var domain ="https://sonvnnike.com.vn/"
-export const apiLogin = localhost + "api/auth/login";
-export const apiGetLayBaiViet = localhost + "api/quantri/services/getBaiViet";
+export const apiLogin = domain + "api/auth/login";
+export const apiGetLayBaiViet = domain + "api/quantri/services/getBaiViet";
 
 // export const apiQuanTriBaiViet = localhost + "api/quantri/services/apiBaiViet";
 
-<<<<<<< HEAD
 export const apiQuanTriBaiViet = localhost + "api/quantri/services/apiBaiViet";
-=======
-export const apiQuanTriBaiViet = domain + "api/quantri/services/apiBaiViet";
 
 
 export const apiSanPham = domain + "api/sanpham/services/apiSanPham";
 export const apiDanhMuc = domain + "api/danhmuc/services/apiDanhMuc";
 export const apiGetDanhMuc = domain + "api/danhmuc/services/getDanhMuc";
->>>>>>> 9197ba52e74a60ac30045fbdb1fe49ac8e648181

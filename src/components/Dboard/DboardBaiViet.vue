@@ -10,11 +10,20 @@
             v-for="(itemBaiViet, index) in listBaiViet"
             :key="index"
             class="completed"
+            style="background: aliceblue"
             @click="getChiTietBaiViet(itemBaiViet)"
           >
             <strong>{{ decodeBase64(itemBaiViet.title) }}</strong>
-            <span class="ml-lg-2 cursor-pointer">
-              <i class="fa fa-times-circle" style="color: red" aria-hidden="true"></i>
+            <span
+              class="ml-lg-2 cursor-pointer"
+              @click="xoaBaiViet(itemBaiViet.id)"
+              style="cursor: pointer"
+            >
+              <i
+                class="fa fa-times-circle"
+                style="color: red"
+                aria-hidden="true"
+              ></i>
             </span>
           </li>
         </ul>
@@ -24,7 +33,10 @@
           <h3>Chi tiết</h3>
         </div>
 
-        <div class="form-group input-group d-flex" style="flex-direction: column">
+        <div
+          class="form-group input-group d-flex"
+          style="flex-direction: column"
+        >
           <span class="has-float-label">
             <input
               class="form-control"
@@ -36,7 +48,6 @@
             <label style="font-size: 16px; font-weight: 600">Tiêu đề</label>
           </span>
 
-    
           <span class="has-float-label mt-4">
             <input
               class="form-control"
@@ -44,29 +55,29 @@
               type="text"
               v-model="shortContent"
             />
-            <label style="font-size: 16px; font-weight: 600">Nội dung tóm tắt</label>
-          </span>
-          
-          <span class="has-float-label mt-4">
-           
-            <textarea id="editor1"></textarea>
-          </span>
-          <span class="has-float-label mt-4">
-            <input
-              class="form-control"
-              type="text"
-              v-model="urlImage"
-            />
-            <label style="font-size: 16px; font-weight: 600">url Ảnh hiển thị</label>
+            <label style="font-size: 16px; font-weight: 600"
+              >Nội dung tóm tắt</label
+            >
           </span>
 
           <span class="has-float-label mt-4">
-            <input
-              class="form-control"
-              type="text"
-              v-model="urlBaiViet"
-            />
-            <label style="font-size: 16px; font-weight: 600">Link bài viết  <i style="font-weight: 200; font-size: 14px;">(* VD: son-trong-tham)</i></label> 
+            <textarea id="editor1"></textarea>
+          </span>
+          <span class="has-float-label mt-4">
+            <input class="form-control" type="text" v-model="urlImage" />
+            <label style="font-size: 16px; font-weight: 600"
+              >url Ảnh hiển thị</label
+            >
+          </span>
+
+          <span class="has-float-label mt-4">
+            <input class="form-control" type="text" v-model="urlBaiViet" />
+            <label style="font-size: 16px; font-weight: 600"
+              >Link bài viết
+              <i style="font-weight: 200; font-size: 14px"
+                >(* VD: son-trong-tham)</i
+              ></label
+            >
           </span>
         </div>
         <div class="d-flex">
@@ -78,19 +89,26 @@
           >
             Sửa bài viết
           </button>
-          <button class="w-25"  @click="themBaiVietMoi()" style="height: 50px; color: white" v-if="themBaiViet">
+          <button
+            class="w-25"
+            @click="themBaiVietMoi()"
+            style="height: 50px; color: white"
+            v-if="themBaiViet"
+          >
             Thêm bài viết
           </button>
         </div>
       </div>
-
-   
     </div>
   </main>
 </template>
 
 <script>
-import { getBaiViet, postUpdateBaiViet } from "@/assets/js/snapService";
+import {
+  deleBaiViet,
+  getBaiViet,
+  postUpdateBaiViet,
+} from "@/assets/js/snapService";
 
 export default {
   name: "CkEditor",
@@ -119,7 +137,9 @@ export default {
         this.contentBaiViet = this.ckEditor.getData();
       });
     } else {
-      console.error("CKEditor chưa được load. Hãy kiểm tra lại việc import CKEditor.");
+      console.error(
+        "CKEditor chưa được load. Hãy kiểm tra lại việc import CKEditor."
+      );
     }
   },
   methods: {
@@ -205,6 +225,21 @@ export default {
         console.log(err);
       }
     },
+
+    async xoaBaiViet(id) {
+      try {
+        const resBaiViet = await deleBaiViet(7, id);
+        console.log(" resBaiViet ", resBaiViet);
+        if (resBaiViet.status === 200) {
+          alert("Xóa thành công bài viết !");
+          window.location.reload();
+        } else {
+          alert("Có lỗi xảy ra, vui lòng thử lại sau !");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
 </script>
@@ -248,5 +283,4 @@ export default {
   color: #ccc;
   opacity: 1; /* Đảm bảo placeholder luôn hiển thị */
 }
-
 </style>

@@ -50,7 +50,14 @@ export const getChiTietBaiViet = (funcId , shortUrl)=>{
     return res.data
   });
        
-  
+}
 
-
+export const deleBaiViet = (funcId , id)=>{
+  return axios.post(apiQuanTriBaiViet,{
+    funcId, id
+  },{
+    headers: header,
+  }).then((res)=>{
+    return res
+  });
 }
