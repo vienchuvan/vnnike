@@ -27,6 +27,7 @@ import ProductDetail from "@/components/Product/DetailProduct.vue";
 import FooterVNnike from "@/views/Footer/FooterVNnike.vue";
 import ProductCate from "../Product/ProductCate.vue";
 import FloattingContact from "./FloattingContact.vue";
+import { apiGetSanPham } from "@/assets/js/api";
 
 export default {
   name: "ProductList",
@@ -46,7 +47,7 @@ export default {
         { id: 2, name: "SƠN NGOẠI THẤT" },
         { id: 3, name: "SƠN LÓT" },
         { id: 4, name: "SƠN CHỐNG THẤM" },
-        { id: 5, name: "SƠN CHỐNG NÓNG" },
+        { id: 5, name: "SƠN BỘT BẢ - SƠN NHŨ" },
         
       ],
     };
@@ -64,7 +65,7 @@ export default {
   },
     getProducts() {
       axios
-        .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham")
+        .get(apiGetSanPham)
         .then((res) => {
           this.products = res.data.response;
           console.log("Products fetched:", this.products);

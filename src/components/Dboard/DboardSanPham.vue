@@ -6,7 +6,7 @@
         <div class="head">
           <h3>Sản phẩm</h3>
         </div>
-        <ul class="todo-list" style="height: 800px; overflow: auto">
+        <ul class="todo-list" style="height: 700px; overflow: auto">
           <li
             v-for="(itemSanPham, index) in products"
             :key="index"

@@ -28,18 +28,18 @@
             <a href="/danh-muc/son-chong-tham" class="nav-item nav-link"
               >Sơn chống thấm</a
             >
-            <a href="/danh-muc/son-chong-nong" class="nav-item nav-link"
-              >Sơn chống nóng</a
+            <a href="/danh-muc/son-bot-ba-son-nhu" class="nav-item nav-link"
+              >Sơn bột bả - sơn nhũ</a
             >
           </div>
         </nav>
       </div>
       <div class="col-lg-9">
         <nav
-          class="navbar m-auto navbar-expand-lg navbar-dark py-3 py-lg-0 px-0"
+          class="navbar m-auto navbar-expand-lg navbar-dark py-2 py-lg-0 px-0"
         >
           <a href="" class="text-decoration-none d-block d-lg-none">
-            <img style="width: 100px" :src="imageUrls.logoCty" />
+            <img style="width: 150px" :src="imageUrls.logoCty" />
           </a>
           <button
             type="button"

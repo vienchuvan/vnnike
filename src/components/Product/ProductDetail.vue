@@ -2,7 +2,7 @@
   <headerShop></headerShop>
   <menuShop></menuShop>
   <div class="container pb-5">
-    <div class="row ">
+    <div class="row">
       <div class="col-lg-2 p-0 h-auto mb-30 danh-muc">
         <table class="rwd-table p-1">
           <tbody>
@@ -10,8 +10,10 @@
               <th>DANH MỤC</th>
             </tr>
             <tr v-for="item in danhMuc" :key="item.idDanhMuc">
-              <td class="p-1" style="font-size: 13px;" data-th="Supplier Code">
-                {{ item.tenDanhMuc }}
+              <td class="p-1" style="font-size: 13px" data-th="Supplier Code">
+                <a style="color: black;" :href='"/danh-muc/" + item.sortUrl'>  {{ item.tenDanhMuc }} </a>
+             
+              
               </td>
             </tr>
           </tbody>
@@ -34,59 +36,60 @@
             </div>
           </div>
           <input name="" id="imgProduct" v-model="product.imgSP" hidden />
-          <a
-            class="carousel-control-prev"
-            href="#product-carousel"
-            data-slide="prev"
-          >
+          <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
             <i class="fa fa-2x fa-angle-left text-dark"></i>
           </a>
-          <a
-            class="carousel-control-next"
-            href="#product-carousel"
-            data-slide="next"
-          >
+          <a class="carousel-control-next" href="#product-carousel" data-slide="next">
             <i class="fa fa-2x fa-angle-right text-dark"></i>
           </a>
         </div>
       </div>
 
       <div class="col-lg-6 h-auto mb-30">
-        <div
-          class="h-100 bg-light p-30 d-flex flex-column align-items-sm-baseline"
-        >
+        <div class="h-100 bg-light p-30 d-flex flex-column align-items-sm-baseline">
           <h3>{{ product.tenSP }}</h3>
           <input name="" id="id" v-model="product.id" hidden />
           <input name="" id="nameProduct" v-model="product.tenSP" hidden />
 
-          <div class="d-flex mb-3">
-            <div class="text-primary mr-2">
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star"></small>
-              <small class="fas fa-star-half-alt"></small>
-              <small class="far fa-star"></small>
-            </div>
-            <small class="pt-1">(99 Reviews)</small>
+          <div class="d-flex mb-3 flex-column">
+            <strong class="pt-1">{{ product.tenSP }} {{ product.maSP }}</strong>
+            <small class="pt-1" style="text-align: justify"> * {{ product.mota }}</small>
           </div>
 
-          <h3 class="font-weight-semi-bold mb-4" style="color: red">
-            <!-- {{ formatPrice(product.price) }} đ -->
-          </h3>
-          <input name="" id="price" v-model="product.price" hidden />
-
-          <div class="d-flex mb-3">
-            <span class="cut-text"> {{ product.detail }}</span>
+          <!-- Hiển thị thông tin của item được chọn -->
+          <div v-if="selectedItem" style="text-align: justify">
+            <p class="font-weight-semi-bold mb-2" style="color: red">
+              <strong>Giá bán:</strong> {{ formatCurrency(selectedItem.giaBan) }}
+            </p>
+            <p class="cut-text">
+              <strong>Định mức:</strong> {{ selectedItem.dinhMuc }} m2/thùng
+            </p>
           </div>
-
-          <div class="d-flex align-items-center mb-4 pt-2">
-            <button
+          <!-- <div class="d-flex align-items-center mb-4 pt-2" v-for="item in productDetail" :key="item.id">
+            <button 
               class="btn btn-primary px-3 border-radius-10"
               type="button"
-            >
-              <i class="fa fa-shopping-cart mr-1"></i> Giá cả liên hệ
+            > {{ item.quyCach }} - {{ item.giaBan +"  Vnđ" }} - {{ item.dinhMuc + "m2/thùng" }} 
+              <i class="fa fa-shopping-cart mr-1"></i> 
             </button>
+          </div> -->
+          <div class="d-flex">
+            <div
+              class="align-items-center mb-4 pt-2 ml-2"
+              v-for="item in productDetail"
+              :key="item.id"
+            >
+              <button
+                class="btn btn-primary px-3 border-radius-10"
+                type="button"
+                @click="selectItem(item)"
+              >
+                {{ item.quyCach }}
+                <i class="fa fa-shopping-cart mr-1"></i>
+              </button>
+            </div>
           </div>
+
           <div class="d-flex flex-column w-100">
             <div class="d-flex m-auto w-100">
               <button
@@ -94,12 +97,7 @@
                 type="button"
               >
                 <i class="fab fa-facebook-f mr-1"></i
-                ><a
-                  style="color: white"
-                  href="#"
-                  target="_blank"
-                  >Chat Facebook
-                </a>
+                ><a style="color: white" href="#" target="_blank">Chat Facebook </a>
               </button>
 
               <a
@@ -120,12 +118,12 @@
             <div class="d-flex m-auto w-100">
               <a
                 class="btn btn-primary-live px-3 w-100 mt-2 border-radius-10"
-               href="tel:0916186346"
+                href="tel:0916186346"
                 target="_blank"
                 type="button"
               >
-                <i class="fa fa-phone-square" aria-hidden="true"></i> Liên hệ
-                trực tiếp : 0916.186.346
+                <i class="fa fa-phone-square" aria-hidden="true"></i> Liên hệ trực tiếp :
+                0916.186.346
               </a>
             </div>
           </div>
@@ -156,8 +154,7 @@
   <FloattingContact></FloattingContact>
 </template>
 
-<style>
-</style>
+<style></style>
 <script>
 import headerShop from "@/views/Menu/headerShop.vue";
 import menuShop from "@/views/Menu/menuShop.vue";
@@ -176,7 +173,8 @@ export default {
     headerShop,
     menuShop,
     ListProduct,
-    FooterVNnikeVue,FloattingContact
+    FooterVNnikeVue,
+    FloattingContact,
   },
   name: "ProductDetail",
 
@@ -184,10 +182,13 @@ export default {
     return {
       // product: {},
       product: {
+        id: "",
         tenSP: "",
         imgSP: "",
       },
-      danhMuc:''
+      productDetail: {},
+      danhMuc: "",
+      selectedItem: null, // Biến lưu trữ item được chọn
     };
   },
   created() {
@@ -202,16 +203,25 @@ export default {
   },
 
   methods: {
+    formatCurrency(value) {
+      if (!value) return "0 Vnđ";
+      return new Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+      }).format(value);
+    },
+    selectItem(item) {
+      this.selectedItem = item; // Gán item được chọn vào biến selectedItem
+    },
     fetchDanhMuc() {
       axios
-        .get(apiGetDanhMuc,{
-          headers:header
+        .get(apiGetDanhMuc, {
+          headers: header,
         })
         .then((response) => {
           console.log(response.data);
           this.danhMuc = response.data.response;
           console.log("this.danhMuc ", this.danhMuc);
-          
         })
         .catch((error) => {
           console.error("Error fetching product:", error);
@@ -237,6 +247,28 @@ export default {
         });
         // console.log("this.product ", response.data);
         this.product = response.data.result[0];
+        this.fetchProductDetal(this.product.id);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    },
+
+    async fetchProductDetal(id) {
+      console.log("aaaaaa", {
+        funcId: 13,
+        idSanPham: id,
+      });
+
+      try {
+        const response = await axios.post(apiSanPham, {
+          funcId: 13,
+          idSanPham: id,
+        });
+        console.log("this.product ", response.data);
+        this.productDetail = response.data.result;
+        if (this.productDetail.length > 0) {
+          this.selectedItem = this.productDetail[0];
+        }
       } catch (error) {
         console.error("Error:", error);
       }

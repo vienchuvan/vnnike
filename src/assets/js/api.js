@@ -13,5 +13,8 @@ export const apiQuanTriBaiViet = domain + "api/quantri/services/apiBaiViet";
 
 
 export const apiSanPham = domain + "api/sanpham/services/apiSanPham";
+export const apiGetSanPham = domain + "api/sanpham/services/getSanPham";
+
+
 export const apiDanhMuc = domain + "api/danhmuc/services/apiDanhMuc";
 export const apiGetDanhMuc = domain + "api/danhmuc/services/getDanhMuc";

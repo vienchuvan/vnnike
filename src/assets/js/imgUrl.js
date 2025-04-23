@@ -1,5 +1,5 @@
 export const imageUrls = {
-    logoCty: "img/logo/logoCty.png",
+    logoCty: "img/logo/logoCty1.png",
 
     logoCtyXanh: "img/logo/logCtyXanh.png",
 

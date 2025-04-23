@@ -90,6 +90,7 @@ import ProductDetail from "@/components/Product/DetailProduct.vue";
 import { getProducts } from "../api/apiUrl";
 import axios from "axios";
 import { header } from "@/assets/js/snapService";
+import { apiGetSanPham } from "@/assets/js/api";
 
 export default {
   name: "ProductList",
@@ -113,7 +114,7 @@ export default {
     },
     getProducts() {
       axios
-        .get("https://sonvnnike.com.vn/api/sanpham/services/getSanPham", {
+        .get(apiGetSanPham, {
           headers: header,
         })
         .then((res) => {
