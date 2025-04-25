@@ -18,3 +18,11 @@ export const apiGetSanPham = domain + "api/sanpham/services/getSanPham";
 
 export const apiDanhMuc = domain + "api/danhmuc/services/apiDanhMuc";
 export const apiGetDanhMuc = domain + "api/danhmuc/services/getDanhMuc";
+export const apiUploadImg = domain + "api/quantri/upload";
+export const apiGetImg = domain + "api/quantri/getUploads";
+
+export const apiDeleImg =domain+"api/quantri/deleteImage/"
+
+
+export const apiGetDuAn = domain + "api/duan/services/getDuAn";
+export const apiDuAn = domain + "api/duan/services";

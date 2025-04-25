@@ -5,16 +5,16 @@
       <span>ADMIN</span>
     </a>
     <ul class="side-menu top">
-      <li :class="{ active: selectedMenu === 'dashboard' }" @click="selectMenu('dashboard')">
+      <!-- <li :class="{ active: selectedMenu === 'dashboard' }" @click="selectMenu('dashboard')">
         <a href="#">
           <i class="bx bxs-dashboard bx-sm"></i>
           <span class="text">Dashboard</span>
         </a>
-      </li>
+      </li> -->
       <li :class="{ active: selectedMenu === 'danhmuc' }" @click="selectMenu('danhmuc')">
         <a >
           <i class="bx bxs-shopping-bag-alt bx-sm"></i>
-          <span class="text">Sản Phẩm</span>
+          <span class="text">Sản phẩm</span>
         </a>
       </li>
       <li :class="{ active: selectedMenu === 'baiviet' }" @click="selectMenu('baiviet')">
@@ -23,16 +23,16 @@
           <span class="text">Bài viết</span>
         </a>
       </li>
-      <li :class="{ active: selectedMenu === 'dayanh' }" @click="selectMenu('dayanh')">
-        <a href="#">
+      
+      <li :class="{ active: selectedMenu === 'chinhsua' }" @click="selectMenu('chinhsua')">
+        <a >
+          <i class="bx bxs-group bx-sm"></i>
+          <span class="text">Dự Án</span>
+        </a>
+      </li><li :class="{ active: selectedMenu === 'dayanh' }" @click="selectMenu('dayanh')">
+        <a >
           <i class="bx bxs-message-dots bx-sm"></i>
           <span class="text">Đẩy ảnh</span>
-        </a>
-      </li>
-      <li :class="{ active: selectedMenu === 'chinhsua' }" @click="selectMenu('chinhsua')">
-        <a href="#">
-          <i class="bx bxs-group bx-sm"></i>
-          <span class="text">Chỉnh sửa</span>
         </a>
       </li>
     </ul>
@@ -50,10 +50,10 @@
       <DboardBaiViet />
     </div>
     <div v-if="selectedMenu === 'dayanh'">
-      <h2>Đẩy ảnh Content</h2>
+      <DboardDayAnh></DboardDayAnh>
     </div>
     <div v-if="selectedMenu === 'chinhsua'">
-     <DboardTemplate></DboardTemplate>
+  <DboardDuAn></DboardDuAn>
     </div>
   </section>
 </template>
@@ -61,19 +61,22 @@
 <script>
 import { useAuthStore } from "@/assets/js/dboard/auth";
 import DboardBaiViet from "./DboardBaiViet.vue";
+// eslint-disable-next-line no-unused-vars
 import DboardTemplate from "./DboardTemplate.vue";
 import DboardSanPham from './DboardSanPham.vue';
+import DboardDayAnh from "./DboardDayAnh.vue";
+import DboardDuAn from "./DboardDuAn.vue";
 
 export default {
   components: {
-    DboardBaiViet,DboardTemplate,
+    DboardBaiViet,DboardDuAn,DboardDayAnh,
     DboardSanPham
   },
   data() {
     return {
       authStore: "",
       userName: "",
-      selectedMenu: "dashboard", // Mặc định là 'dashboard'
+      selectedMenu: "danhmuc", // Mặc định là 'dashboard'
     };
   },
   mounted() {
