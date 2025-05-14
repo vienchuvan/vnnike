@@ -1,45 +1,90 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <base href="/">
-    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
-    <link rel="icon" href="<%= BASE_URL %>img/logo/iconVN.png">
-    <title> VNnike -Công ty TNHH Sản Xuất Sơn Nước Việt Nam </title>
-     <!-- Favicon -->
-     <link href="img/favicon.ico" rel="icon">
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  
+  <!-- SEO Meta Tags -->
+  <title>VNnike - Công ty TNHH Sản Xuất Sơn Nước Việt Nam</title>
+  <meta name="description" content="VNnike - Nhà sản xuất sơn nước hàng đầu Việt Nam. Chuyên cung cấp các dòng sơn chất lượng cao, giá cả cạnh tranh.">
+  <meta name="keywords" content="VNnike, Sơn nước, Sơn công nghiệp, Sơn tường, Sơn nhà, Sơn cao cấp,0916.186.346,0916186346,+8416186346, Sơn VNnike,Công ty TNHH Sản Xuất Sơn Nước Việt Nam">
+  <meta name="author" content="VNnike Việt Nam">
 
-     <!-- Google Web Fonts -->
-     <link rel="preconnect" href="https://fonts.gstatic.com" >
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" type="text/css">  
- 
-     <!-- Font Awesome -->
-     <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" type="text/css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="VNnike - Công ty TNHH Sản Xuất Sơn Nước Việt Nam">
+  <meta property="og:description" content="Nhà sản xuất sơn nước hàng đầu Việt Nam với chất lượng vượt trội.">
+  <meta property="og:image" content="/img/logo/iconVN.png">
+  <meta property="og:url" content="https://sonvnnike.com.vn/">
+  <meta property="og:type" content="website">
+  <meta property="og:phone_number" content="+8416186346"> <!-- Thay số điện thoại thực tế -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/logo/iconVN.png" type="image/png">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link href="./css/style.min.css?v=<?=time()?>" rel="stylesheet">
+  <link href="./css/vila.css?v=<?=time()?>" rel="stylesheet">
+  <link href="./css/dboard.css?v=<?=time()?>" rel="stylesheet">
+  <link href="./css/animation.css?v=<?=time()?>" rel="stylesheet">
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js?v=<?=time()?>"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js?v=<?=time()?>"></script>
+
+  <!-- CKEditor -->
+  <script src="/ckeditor/ckeditor.js?v=<?=time()?>"></script>
 
 
-     <!-- <link href="./css/style.css" rel="stylesheet"> -->
-     <link href="./css/style.min.css?v=<?=time()?>" rel="stylesheet"type="text/css" >
-     <link href="./css/vila.css?v=<?=time()?>" rel="stylesheet" type="text/css">
-     <link href="./css/dboard.css?v=<?=time()?>" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-     <!-- <link href="./css/bootstrap.min.css" rel="stylesheet">
-     <link href="./css/bootstrap.css" rel="stylesheet"> -->
+  <!-- Schema.org LocalBusiness (SEO cho Doanh nghiệp) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "VNnike - Công ty TNHH Sản Xuất Sơn Nước Việt Nam",
+    "image": "https://vnnike.vn/img/logo/iconVN.png",
+    "@id": "https://sonvnnike.com.vn/",
+    "url": "https://sonvnnike.com.vn/",
+    "telephone": "0916186346",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vạn Phúc - Thanh Trì - Hà Nội",
+      "addressLocality": "Hà Nội",
+      "postalCode": "100000",
+      "addressCountry": "VN"
+    }
+  }
+  </script>
 
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js?v=<?=time()?>"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js?v=<?=time()?>"></script>
-     <!-- <script src="./lib/easing/easing.min.js"></script>
-     <script  <script src="/ckeditor/ckeditor.js"> </script>ript src="./lib/owlcarousel/owl.carousel.min.js"></script> -->
-     <script src="/ckeditor/ckeditor.js?v=<?=time()?>"> </script>
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+</head>
+<body>
+  <noscript>
+    Tại <strong style="color: #2291a3">VNnike</strong>, “Sơn đâu
+    cũng đẹp”… Không chỉ là một thông điệp về màu sắc, mà đó là
+    một trạng thái tinh thần, thái độ giúp truyền cảm hứng để
+    chúng ta tiến về phía trước, cải thiện nơi sống, cộng đồng và
+    thế giới của chúng ta. Ngôi nhà luôn là chốn ta mong muốn quay
+    về sau những vất vả lo âu cho cuộc sống mưa sinh. Thấu hiểu
+    được điều đó, sơn My Sun luôn đồng hành cùng bạn để tô điểm
+    cho ngôi nhà, nơi ta cảm thấy yên tâm và thoải mái nhất. Một
+    ngôi nhà không những “đẹp” mà còn “hợp” với bạn, đó là điều
+    chúng tôi mong muốn.
+  </noscript>
+
+  <div id="app"></div>
+
+
+  <!-- built files will be auto injected -->
+</body>
 </html>

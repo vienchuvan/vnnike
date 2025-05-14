@@ -4,7 +4,7 @@
     <MenuShop></MenuShop>
     <div class="container-fluid mb-3">
       <div class="row px-xl-5">
-        <div class="col-lg-8">
+        <div class="col-lg-8 wow fadeInLeft" data-wow-delay="0.2s">
           <div
             id="header-carousel"
             class="carousel slide carousel-fade mb-30 mb-lg-0"
@@ -111,7 +111,7 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="product-offer mb-30" style="height: 200px">
+          <div class="product-offer mb-30 wow fadeInRight" data-wow-delay="0.4s" style="height: 200px">
             <img
               class="img-fluid"
               :src="imageUrls.banner5"
@@ -123,7 +123,7 @@
               <a href="/san-pham" class="btn btn-primary">Xem ngay</a>
             </div>
           </div>
-          <div class="product-offer mb-30" style="height: 200px">
+          <div class="product-offer mb-30 wow fadeInRight" data-wow-delay="0.6s" style="height: 200px">
             <img
               class="img-fluid"
              :src="imageUrls.banner6"
@@ -163,6 +163,9 @@ import DuAnTrienKhai from "./DuAnTrienKhai.vue";
 import FooterVNnike from "../Footer/FooterVNnike.vue";
 import FloattingContact from "@/components/GioiThieu/FloattingContact.vue";
 
+import WOW from "wowjs";
+import { onMounted } from 'vue';
+
 export default {
   components: {
     HeaderShop,
@@ -179,7 +182,12 @@ data(){
   return{
 imageUrls: imageUrls
   }
-}
+},
+setup() {
+  onMounted(() => {
+    new WOW.WOW().init();
+  });
+},
   
 };
 </script>

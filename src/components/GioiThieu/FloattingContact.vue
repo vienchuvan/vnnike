@@ -1,6 +1,6 @@
 <template>
   <a>
-    <button class="btn-floating scroll-to-top" @click="scrollToTop">
+    <button class="btn-floating1 scroll-to-top" @click="scrollToTop">
       <i class="fa fa-angle-double-up" aria-hidden="true"></i>
     </button>
   </a>
@@ -43,7 +43,18 @@ export default {
 .btn-floating:hover img {
   margin-bottom: -3px
 }
-
+.btn-floating1 {
+    position: fixed;
+    right: 25px;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 0;
+    z-index: 9999;
+    color: white;
+    transition: .2s;
+}
 .btn-floating {
     position: fixed;
     right: 25px;
@@ -74,7 +85,7 @@ export default {
 .btn-floating:hover span {
     display: inline-block;
 }
-.btn-floating.scroll-to-top {
+.btn-floating1.scroll-to-top {
   bottom: 145px; /* Đặt vị trí phía trên nút điện thoại */
   background-color: #0a9343;
 }

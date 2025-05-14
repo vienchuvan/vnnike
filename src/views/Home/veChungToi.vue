@@ -55,10 +55,11 @@
       </div>
     </div>
   </div>
-  <div class="container mt-3">
+  <div class="container mt-5">
     <div class="row">
       <div
         class="col-12 col-md-3 wow fadeInDown floating-image"
+          data-wow-duration="2s"
         data-wow-delay="0.3s"
       >
       <a href="/danh-muc/son-noi-that"> 
@@ -69,6 +70,7 @@
       </div>
       <div
         class="col-12 col-md-3 wow fadeInDown floating-image"
+         data-wow-duration="2s"
         data-wow-delay="0.5s"
       >
       <a href="/danh-muc/son-ngoai-that"> 
@@ -79,6 +81,7 @@
       </div>
       <div
         class="col-12 col-md-3 wow fadeInDown floating-image"
+         data-wow-duration="2s"
         data-wow-delay="0.8s"
       >
       <a href="/danh-muc/son-chong-tham"> 
@@ -89,6 +92,7 @@
       </div>
       <div
         class="col-12 col-md-3 wow fadeInDown floating-image"
+         data-wow-duration="2s"
         data-wow-delay="0.11s"
       >
       <a href="/danh-muc/son-lot"> 
